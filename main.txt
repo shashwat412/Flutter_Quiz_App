@@ -1,0 +1,108 @@
+import 'package:flutter/material.dart';
+
+import './quiz.dart';
+import './result.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return _MyAppState();
+  }
+}
+
+class _MyAppState extends State<MyApp> {
+  final _questions = const [
+    {
+      'questionText':
+          'The first case of novel coronavirus was identified in ..... ',
+      'answers': [
+        {'text': 'A. Beijing', 'score': 0},
+        {'text': 'B. Shanghai', 'score:': 0},
+        {'text': 'C. Wuhan, Hubei ', 'score': 1},
+        {'text': 'D. Tianjin', 'score': 0},
+      ],
+    },
+    {
+      'questionText':
+          'World Health Organisation on 11 February, 2020 announced an official name for the disease that is causing the 2019 novel coronavirus outbreak? What is the new name of the disease?',
+      'answers': [
+        {'text': 'A. COVID-19', 'score': 1},
+        {'text': 'B. COVn-19', 'score:': 0},
+        {'text': 'C. COnV-20', 'score': 0},
+        {'text': 'D. COnVID-19', 'score': 0},
+      ],
+    },
+    {
+      'questionText': 'Mild Symptoms of Novel coronavirus are:',
+      'answers': [
+        {'text': 'A. Fever', 'score': 0},
+        {'text': 'B. Cough', 'score:': 0},
+        {'text': 'C. Shortness of breath', 'score': 0},
+        {'text': 'D. All of the above', 'score': 1},
+      ],
+    },
+    {
+      'questionText':
+          'It is recommended that you wash your hands for at least______of time.',
+      'answers': [
+        {'text': 'A. 10 seconds', 'score': 0},
+        {'text': 'B. 5 seconds', 'score': 0},
+        {'text': 'C. 20 seconds', 'score': 1},
+        {'text': 'D. 5 minutes', 'score': 0},
+      ],
+    },
+    {
+      'questionText': 'From where did coronavirus got its name?',
+      'answers': [
+        {'text': 'A. Due to their crown-like projections.', 'score': 1},
+        {'text': 'B. Due to their leaf-like projections.', 'score': 0},
+        {'text': 'C. Due to their surface structure of bricks.', 'score': 0},
+        {'text': 'D. None of the above', 'score': 0},
+      ],
+    },
+  ];
+  var _questionIndex = 0;
+  var _totalScore = 0;
+
+  void _resetQuiz() {
+    setState(() {
+      _questionIndex = 0;
+      _totalScore = 0;
+    });
+  }
+
+  void _answerQuestion(int score) {
+    _totalScore += score;
+
+    setState(() {
+      _questionIndex++;
+    });
+    print(_questionIndex);
+    if (_questionIndex < _questions.length) {
+      print('We have more Questions');
+    } else {
+      print('No more Questions');
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Corona Virus Quiz'),
+        ),
+        body: _questionIndex < _questions.length
+            ? Quiz(
+                answerQuestion: _answerQuestion,
+                questionIndex: _questionIndex,
+                questions: _questions,
+              )
+            : Result(_totalScore, _resetQuiz),
+      ),
+    );
+  }
+}
