@@ -8,7 +8,6 @@ void main() => runApp(MyApp());
 class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return _MyAppState();
   }
 }
@@ -61,6 +60,73 @@ class _MyAppState extends State<MyApp> {
         {'text': 'B. Due to their leaf-like projections.', 'score': 0},
         {'text': 'C. Due to their surface structure of bricks.', 'score': 0},
         {'text': 'D. None of the above', 'score': 0},
+      ],
+    },
+    {
+      'questionText': 'How is COVID-19 passed on?',
+      'answers': [
+        {
+          'text':
+              'A. Through droplets that come from your mouth and nose when you cough or breathe out',
+          'score': 1
+        },
+        {'text': 'B. Through direct touch', 'score': 0},
+        {'text': 'C.By drinking unclean water', 'score': 0},
+        {'text': 'D. All of the above', 'score': 0},
+      ],
+    },
+    {
+      'questionText':
+          'How long does the novel coronavirus survive outside the body?',
+      'answers': [
+        {'text': 'A. A week in the air and on surfaces', 'score': 0},
+        {'text': 'B. Several Hours to days', 'score': 1},
+        {'text': 'C. Upto a Year', 'score': 0},
+        {'text': 'D. Immediately dies', 'score': 0},
+      ],
+    },
+    {
+      'questionText': 'Where does Quarantine word come from?',
+      'answers': [
+        {'text': 'A. From Italian word quranta', 'score': 1},
+        {'text': 'B. From Kratian word karantena', 'score': 0},
+        {'text': 'C. From Spanish word cuaranta', 'score': 0},
+        {'text': 'D. None of Them', 'score': 0},
+      ],
+    },
+    {
+      'questionText':
+          'Who was the first member of a royal family in the world to die of Covid-19?',
+      'answers': [
+        {'text': 'A. Spanish Princess Maria Teressa', 'score': 1},
+        {'text': 'B. Frederik, Crown Prince Denmark', 'score': 0},
+        {'text': 'C. Haitham bin Tariq Al Said, Sultan of Oman', 'score': 0},
+        {'text': 'D. None of them', 'score': 0},
+      ],
+    },
+    {
+      'questionText': 'Can I use antibiotics to fight Covid-19?',
+      'answers': [
+        {
+          'text':
+              'A. Yes, antibiotics strengthen the body’s immune system and can work against Covid-19.',
+          'score': 0
+        },
+        {
+          'text':
+              'B. Yes, antibiotics work on bacterial infections and can also cure Covid-19.',
+          'score': 0
+        },
+        {
+          'text':
+              'C. No, antibiotics work only on bacterial infection and Covid-19 is a viral infection.',
+          'score': 1
+        },
+        {
+          'text':
+              'D. No, antibiotics can’t be used because WHO has banned their use for Covid-19.',
+          'score': 0
+        },
       ],
     },
   ];
