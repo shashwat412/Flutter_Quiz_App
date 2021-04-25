@@ -1,2 +1,2 @@
-# Flutter_Quiz_App
+# covid_awareness_quiz_app
  A Corona Virus awreness simple quiz app
